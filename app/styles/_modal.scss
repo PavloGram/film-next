@@ -1,0 +1,218 @@
+.modal-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale(0.5);
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  pointer-events: none;
+
+  overflow-y: auto;
+}
+
+.modal-section.is-open {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  width: 280px;
+  padding: 48px 20px 40px 20px;
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  @media screen and (min-width: 768px){
+    width: 704px;
+    padding: 40px 72px 64px 36px;
+    display: flex;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media screen and (min-width: 1280px){
+    width: 806px;
+    padding: 40px 12px;
+  }
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  padding: 0 3px 3px 0;
+  background: #ffffff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.close-modal-btn:hover {
+  background: #b92f2c;
+}
+
+.close-icon {
+  stroke: #000000;
+
+  width: 30px;
+  height: 30px;
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+.close-modal-btn:hover > svg {
+  stroke: #ffffff;
+}
+
+.modal-img {
+  width: 240px;
+  height: 357px;
+  border-radius: 5px;
+  @media screen and (min-width: 768px){
+    width: 264px;
+    height: 374px;
+  }
+  @media screen and (min-width: 1280px){
+    width: 375px;
+    height: 478px;
+  }
+}
+
+.modal-title {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 20px 0;
+  @media screen and (min-width: 768px){
+    margin: 0 0 20px 0;
+  }
+  @media screen and (min-width: 1280px){
+   font-size: 30px;
+  }
+}
+
+.modal-table-title {
+  display: flex;
+  align-items: flex-start;
+  width: 120px;
+  color: #8c8c8c;
+  text-align: left;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 133.333% */
+  @media screen and (min-width: 1280px){
+    width: 150px;
+   }
+}
+.modal-table-value {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 133.333% */
+}
+
+.modal-table-change-bg {
+  width: 36px;
+  padding: 1px 10px;
+  border-radius: 5px;
+  background: #b92f2c;
+  color: #ffffff;
+}
+
+.modal-desc-title {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 133.333% */
+  text-transform: uppercase;
+  margin: 20px 0 8px 0;
+}
+
+.modal-desc-text {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 166.667% */
+  margin-bottom: 20px;
+}
+
+.modal-btn {
+  color: #b92f2c;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: 1px solid;
+  cursor: pointer;
+
+  transition-property:  color, background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+
+}
+
+.modal-btn.active {
+  background: #b92f2c;
+  color: #ffffff;
+}
+
+.modal-btn.watch {
+  width: 125px;
+  height: 34px;
+  margin-right: 4px;
+  @media screen and (min-width: 768px){
+    width: 137px;
+    height: 38px;
+    margin-right: 8px;
+  }
+  @media screen and (min-width: 1280px){
+    width: 165px;
+    height: 42px;
+   }
+}
+
+.modal-btn.queue {
+  width: 111px;
+  height: 34px;
+  @media screen and (min-width: 768px){
+    width: 119px;
+    height: 38px;
+
+  }
+  @media screen and (min-width: 1280px){
+    width: 134px;
+    height: 42px;
+   }
+}
+
+.modal-btn:hover {
+  color: #ffffff;
+  background: #b92f2c;
+  box-shadow: 0px 0px 7px 0px rgba(27, 27, 27, 0.15);
+}
+
+.modal-content-wrap{
+  @media screen and (min-width: 768px){
+      margin-left: 68px;
+  }
+  @media screen and (min-width: 1280px){
+    margin-left: 16px;
+}
+}

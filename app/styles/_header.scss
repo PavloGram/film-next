@@ -1,0 +1,301 @@
+.header {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  height: 460px;
+  margin: 0 auto;
+  background-image: url(../../public/images/header/header-bg-mob.jpg);
+  padding: 14px 14px 24px 14px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (min-width: 768px) {
+    max-width: 704px;
+    height: 222px;
+    background-image: url(../../public/images/header/header-bg-tablet.jpg);
+    padding: 16px;
+
+    flex-direction: row;
+    align-items: start;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1216px;
+    height: 316px;
+    background-image: url(../../public/images/header/header-bg-desktop.jpg);
+    padding: 16px 32px;
+  }
+}
+
+.nav-and-search-section-wrap {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: 768px) {
+    flex-direction: row-reverse;
+    justify-content: start;
+    align-items: start;
+  }
+}
+
+.list {
+  display: flex;
+  column-gap: 4px;
+  @media screen and (min-width: 1280px) {
+    column-gap: 8px;
+  }
+}
+
+.link {
+  display: block;
+  background: #ffffff;
+  color: inherit;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  transition-property: color, background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.link.active-link {
+  background: #000000;
+  color: #ffffff;
+}
+
+.link:hover {
+  background: #000000;
+  color: #ffffff;
+}
+
+.home-link {
+  padding: 10px 26px;
+  @media screen and (min-width: 768px) {
+    padding: 12px 24px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 14px 32px;
+  }
+}
+
+.my-library-link {
+  padding: 10px 26px;
+  @media screen and (min-width: 768px) {
+    padding: 12px 20px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 14px 24px;
+  }
+}
+
+.section-form {
+  margin: 8px 0;
+  @media screen and (min-width: 768px) {
+    margin: 0 4px 0 0;
+  }
+  @media screen and (min-width: 1280px) {
+    margin: 0 8px 0 0;
+  }
+}
+
+.form {
+  position: relative;
+  @media screen and (min-width: 768px) {
+    width: 165px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 187px;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 50px;
+
+  border: 0;
+
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  outline: none;
+  @media screen and (min-width: 768px) {
+    padding: 11px 16px;
+    font-size: 14px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 13px 16px;
+  }
+}
+
+.input::placeholder {
+  color: black;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+}
+
+.search-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  border: none;
+  transform: translateY(-40%);
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.search-icon {
+  width: 14px;
+  height: 14px;
+  @media screen and (min-width: 768px) {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.error-text-wrap {
+  display: none;
+  margin: 8px 0 0 14px;
+  width: 150px;
+
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.error-text {
+  color: #fff;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.logo-section {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+
+  @media screen and (min-width: 768px) {
+    transform: translateX(0);
+    left: 16px;
+    bottom: 16px;
+  }
+  @media screen and (min-width: 1280px) {
+    left: 32px;
+    bottom: 32px;
+  }
+}
+.logo-section.my-library {
+  bottom: 74px;
+  @media screen and (min-width: 768px) {
+    transform: translateX(0);
+    left: 16px;
+    bottom: 16px;
+  }
+  @media screen and (min-width: 1280px) {
+    left: 32px;
+    bottom: 32px;
+  }
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  @media screen and (min-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 60px;
+    height: 60px;
+  }
+}
+.logo {
+  color: #fff;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 64px;
+  }
+}
+
+.my-library-btn-wrap {
+  margin: 0 auto;
+  display: flex;
+  column-gap: 4px;
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    column-gap: 8px;
+  }
+}
+
+.my-library-btn {
+  color: #b92f2c;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  border-radius: 100px;
+  cursor: pointer;
+  border: 0;
+
+  transition-property: color, background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.my-library-btn:hover {
+  background: #b92f2c;
+  color: #ffffff;
+}
+
+.my-library-btn.active {
+  background: #b92f2c;
+  color: #ffffff;
+}
+
+.watched-btn {
+  padding: 10px 23px;
+  @media screen and (min-width: 768px) {
+    padding: 12px 23px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 14px 32px;
+  }
+}
+
+.queue-btn {
+  padding: 12px 24px;
+  @media screen and (min-width: 768px) {
+    padding: 12px 24px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 14px 24px;
+  }
+}
