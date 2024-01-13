@@ -43,7 +43,7 @@ function FilmCardWrap() {
 
   return (
     <section className="card-wrap">
-      {currentArr.length === 0 && path !== "/" ? (
+      {currentArr?.length === 0 && path !== "/" ? (
         <Image
           src={noMovie}
           alt="no Movie"
