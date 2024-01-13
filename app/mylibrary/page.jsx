@@ -1,8 +1,14 @@
 import React from 'react'
+import FilmCardWrap from '../components/FilmCardWrap'
+import Modal from '../components/Modal'
 
 function page() {
   return (
-    <div>page</div>
+    <>
+    <FilmCardWrap/>
+    <Modal/>
+    </>
+    
   )
 }
 

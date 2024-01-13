@@ -166,13 +166,17 @@
 }
 
 .error-text-wrap {
-  display: none;
+  opacity: 0;
   margin: 8px 0 0 14px;
   width: 150px;
 
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
+}
+
+.error-text-wrap.is-active{
+  opacity: 100;
 }
 
 .error-text {
@@ -182,6 +186,8 @@
   font-weight: 400;
   line-height: normal;
 }
+
+
 
 .logo-section {
   position: absolute;

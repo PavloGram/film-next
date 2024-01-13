@@ -29,16 +29,16 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     width: 704px;
     padding: 40px 72px 64px 36px;
     display: flex;
-    top: 50%;
-    transform: translate(-50%, -50%);
   }
-  @media screen and (min-width: 1280px){
+  @media screen and (min-width: 1280px) {
     width: 806px;
     padding: 40px 12px;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
@@ -81,11 +81,11 @@
   width: 240px;
   height: 357px;
   border-radius: 5px;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     width: 264px;
     height: 374px;
   }
-  @media screen and (min-width: 1280px){
+  @media screen and (min-width: 1280px) {
     width: 375px;
     height: 478px;
   }
@@ -97,11 +97,11 @@
   font-weight: 500;
   line-height: normal;
   margin: 20px 0;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     margin: 0 0 20px 0;
   }
-  @media screen and (min-width: 1280px){
-   font-size: 30px;
+  @media screen and (min-width: 1280px) {
+    font-size: 30px;
   }
 }
 
@@ -115,9 +115,9 @@
   font-style: normal;
   font-weight: 500;
   line-height: 16px; /* 133.333% */
-  @media screen and (min-width: 1280px){
+  @media screen and (min-width: 1280px) {
     width: 150px;
-   }
+  }
 }
 .modal-table-value {
   font-size: 12px;
@@ -162,10 +162,9 @@
   border: 1px solid;
   cursor: pointer;
 
-  transition-property:  color, background-color;
+  transition-property: color, background-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 300ms;
-
 }
 
 .modal-btn.active {
@@ -177,29 +176,28 @@
   width: 125px;
   height: 34px;
   margin-right: 4px;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     width: 137px;
     height: 38px;
     margin-right: 8px;
   }
-  @media screen and (min-width: 1280px){
+  @media screen and (min-width: 1280px) {
     width: 165px;
     height: 42px;
-   }
+  }
 }
 
 .modal-btn.queue {
   width: 111px;
   height: 34px;
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 768px) {
     width: 119px;
     height: 38px;
-
   }
-  @media screen and (min-width: 1280px){
+  @media screen and (min-width: 1280px) {
     width: 134px;
     height: 42px;
-   }
+  }
 }
 
 .modal-btn:hover {
@@ -208,11 +206,11 @@
   box-shadow: 0px 0px 7px 0px rgba(27, 27, 27, 0.15);
 }
 
-.modal-content-wrap{
-  @media screen and (min-width: 768px){
-      margin-left: 68px;
+.modal-content-wrap {
+  @media screen and (min-width: 768px) {
+    margin-left: 68px;
   }
-  @media screen and (min-width: 1280px){
+  @media screen and (min-width: 1280px) {
     margin-left: 16px;
-}
+  }
 }

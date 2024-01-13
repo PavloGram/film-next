@@ -1,5 +1,5 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Provider from "./provider";
+
 import "./styles/index.scss";
 import { roboto } from "./ui/fonts";
 
@@ -12,15 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <div className="wrapper">
-          <h1 className="visually-hidden">Filmoteka</h1>
-          <Header />
-          <main>
-             {children} 
-          </main>
-        
-          <Footer />
-        </div>
+        <Provider>{children}</Provider>
       </body>
     </html>
   );
