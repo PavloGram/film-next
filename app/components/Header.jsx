@@ -7,6 +7,7 @@ import LogoIcon from "../ui/LogoIcon";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchValue } from "@/rtk/reducers/searchValue";
 import { setToggleFalse, setToggleTrue } from "@/rtk/reducers/libraryToggle";
+import Button from "../ui/Button";
 
 function Header() {
   const [value, setValue] = useState("");
@@ -41,6 +42,7 @@ function Header() {
             <li>
               <Link
                 href="/mylibrary"
+                onClick={() => dispatch(setToggleTrue())}
                 className={`my-library-link link ${
                   path === "/mylibrary" ? "active-link" : ""
                 }`}
@@ -90,20 +92,18 @@ function Header() {
           path === "/" ? "visually-hidden" : ""
         }`}
       >
-        <button
-          type="button"
-          onClick={() => dispatch(setToggleTrue())}
-          className={`my-library-btn watched-btn ${toggle ? "active" : ""}`}
-        >
-          Watched
-        </button>
-        <button
-          type="button"
-          onClick={() => dispatch(setToggleFalse())}
-          className={`my-library-btn queue-btn ${toggle ? "" : "active"}`}
-        >
-          queue
-        </button>
+        <Button
+          btnValue={"Watched"}
+          actClx={toggle ? "active" : ""}
+          modClx={"header-watch"}
+          clickFunction={() => dispatch(setToggleTrue())}
+        />
+        <Button
+          btnValue={"queue"}
+          actClx={toggle ? "" : "active"}
+          modClx={"header-queue"}
+          clickFunction={() => dispatch(setToggleFalse())}
+        />
       </section>
     </header>
   );

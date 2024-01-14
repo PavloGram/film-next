@@ -6,6 +6,10 @@
   flex-wrap: wrap;
   align-items: flex-start;
   gap: 20px;
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
   @media screen and (min-width: 768px) {
     max-width: 702px;
     gap: 30px;
@@ -16,6 +20,10 @@
     column-gap: 16px;
     row-gap: 32px;
   }
+}
+
+.card-wrap.active{
+  opacity: 100;
 }
 
 .card {

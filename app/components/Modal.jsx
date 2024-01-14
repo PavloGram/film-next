@@ -9,11 +9,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeQueueArray } from "@/rtk/reducers/queueArr";
 import { changeWatchedArray } from "@/rtk/reducers/watchArr";
 import { changeStateActive } from "@/rtk/reducers/activeModal";
+import Button from "../ui/Button";
+import { usePathname } from "next/navigation";
 
 const LOCAL_STORAGE_WATCHED_KEY = "watched";
 const LOCAL_STORAGE_QUEUE_KEY = "queue";
 
 function Modal() {
+  const path = usePathname();
   const dispatch = useDispatch();
   const currentFilm = useSelector((state) => state.currentFilm.value);
   const modal = useSelector((state) => state.activeModal.value);
@@ -22,11 +25,17 @@ function Modal() {
   const queueArr = useSelector((state) => state.queueArr.value);
   const [watchBtn, setWatchBtn] = useState(false);
   const [queuehBtn, setQueueBtn] = useState(false);
+  const [genLen, setGenLen] = useState(0);
 
   useEffect(() => {
+    setGenLen(
+      path === "/"
+        ? currentFilm?.genre_ids?.length
+        : currentFilm?.genres?.length
+    );
     setWatchBtn(detectIdInArrey(watchArr, currentFilm));
     setQueueBtn(detectIdInArrey(queueArr, currentFilm));
-  }, [setWatchBtn, watchArr, queueArr, currentFilm]);
+  }, [setWatchBtn, watchArr, queueArr, currentFilm, path]);
 
   function handleChangeWatchedList() {
     changeLocalStorage(watchArr, currentFilm, LOCAL_STORAGE_WATCHED_KEY);
@@ -91,7 +100,15 @@ function Modal() {
                   {" "}
                   {genres
                     .filter((e) => {
-                      if (currentFilm?.genre_ids?.includes(e.id)) {
+                      if (
+                        path === "/"
+                          ? currentFilm?.genre_ids?.includes(e.id)
+                          : currentFilm?.genres
+                              ?.map((et) => {
+                                return et.id;
+                              })
+                              ?.includes(e.id)
+                      ) {
                         return e;
                       } else {
                         return null;
@@ -100,9 +117,7 @@ function Modal() {
                     .map((el, i) => {
                       return (
                         <span key={el.id}>
-                          {currentFilm?.genre_ids?.length === i + 1
-                            ? `${el.genre}.`
-                            : `${el.genre}, `}
+                          {genLen === i + 1 ? `${el.genre}.` : `${el.genre}, `}
                         </span>
                       );
                     })}
@@ -112,20 +127,18 @@ function Modal() {
           </table>
           <h3 className="modal-desc-title">About </h3>
           <p className="modal-desc-text">{currentFilm?.overview}</p>
-          <button
-            type="button"
-            className={`modal-btn ${watchBtn ? "active" : ""}  watch`}
-            onClick={() => handleChangeWatchedList()}
-          >
-            {watchBtn ? "rem to Watched" : "add to Watched"}
-          </button>
-          <button
-            type="button"
-            className={`modal-btn ${queuehBtn ? "active" : ""} queue`}
-            onClick={() => handleChangeQueueList()}
-          >
-            {queuehBtn ? "rem to queue" : "add to queue"}
-          </button>
+          <Button
+            btnValue={watchBtn ? "rem to Watched" : "add to Watched"}
+            actClx={watchBtn ? "active" : ""}
+            modClx={"modal-watch"}
+            clickFunction={() => handleChangeWatchedList()}
+          />
+          <Button
+            btnValue={queuehBtn ? "rem to queue" : "add to queue"}
+            actClx={queuehBtn ? "active" : ""}
+            modClx={"modal-queue"}
+            clickFunction={() => handleChangeQueueList()}
+          />
         </div>
       </div>
     </section>

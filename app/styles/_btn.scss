@@ -1,0 +1,77 @@
+.btn {
+  color: #b92f2c;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  border-radius: 100px;
+  cursor: pointer;
+  background: #ffffff;
+
+  transition-property: color, background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.btn.active {
+  background: #b92f2c;
+  color: #ffffff;
+}
+
+.btn:hover {
+  background: #b92f2c;
+  color: #ffffff;
+}
+
+.btn.modal-watch {
+  width: 125px;
+  height: 34px;
+  margin-right: 4px;
+  border: 1px solid #b92f2c;
+  @media screen and (min-width: 768px) {
+    width: 137px;
+    height: 38px;
+    margin-right: 8px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 165px;
+    height: 42px;
+  }
+}
+
+.btn.modal-queue {
+  width: 111px;
+  height: 34px;
+  border: 1px solid #b92f2c;
+  @media screen and (min-width: 768px) {
+    width: 119px;
+    height: 38px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 134px;
+    height: 42px;
+  }
+}
+
+.btn.header-watch {
+    border: 0;
+  padding: 10px 23px;
+  @media screen and (min-width: 768px) {
+    padding: 12px 23px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 14px 32px;
+  }
+}
+
+.btn.header-queue {
+    border: 0;
+  padding: 12px 24px;
+  @media screen and (min-width: 768px) {
+    padding: 12px 24px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 14px 24px;
+  }
+}
