@@ -13,7 +13,7 @@ function Pag() {
   const [fiveBtn, setFiveBtn] = useState(0);
 
   const totalresults = Math.ceil(responseData?.total_results / 20);
-  console.log(oneBtn);
+
   useEffect(() => {
     setOneBtn(currentPage <= 3 ? 1 : currentPage - 2);
     setTwoBtn(currentPage <= 3 ? 2 : currentPage - 1);
@@ -91,7 +91,7 @@ function Pag() {
               {fourBtn}
             </button>
           )}
-          {totalresults >= fiveBtn  && (
+          {totalresults >= fiveBtn && (
             <button
               type="button"
               className="pagination-btn"
@@ -112,7 +112,7 @@ function Pag() {
                 &#62;
               </button>
             ))}
-          {( totalresults >= 5 && (totalresults >= threeBtn + 3)) &&
+          {totalresults >= 5 && totalresults >= threeBtn + 3 && (
             <button
               type="button"
               className="pagination-btn"
@@ -120,7 +120,7 @@ function Pag() {
             >
               {totalresults}
             </button>
-          }
+          )}
         </div>
       )}
     </>
