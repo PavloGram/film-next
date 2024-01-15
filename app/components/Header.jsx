@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSearchValue } from "@/rtk/reducers/searchValue";
 import { setToggleFalse, setToggleTrue } from "@/rtk/reducers/libraryToggle";
 import Button from "../ui/Button";
+import { changePage } from "@/rtk/reducers/currentPage";
 
 function Header() {
   const [value, setValue] = useState("");
@@ -20,6 +21,7 @@ function Header() {
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(setSearchValue(value));
+    dispatch(changePage(1));
     setValue("");
   }
 
@@ -31,7 +33,7 @@ function Header() {
             <li>
               <Link
                 href="/"
-                onClick={() => dispatch(setSearchValue(null))}
+                onClick={() => {dispatch(setSearchValue(null)); dispatch(changePage(1))}}
                 className={`home-link link ${
                   path === "/" ? "active-link" : ""
                 }`}

@@ -20,6 +20,7 @@ function FilmCardWrap() {
   const [currentArr, setCurrentArr] = useState([]);
   const watchArr = useSelector((state) => state.watchArr.value);
   const queueArr = useSelector((state) => state.queueArr.value);
+  const currentPage = useSelector((state) => state.currentPage.value);
 
   const modal = useSelector((state) => state.activeModal.value);
 
@@ -27,7 +28,7 @@ function FilmCardWrap() {
      setData(null)
     setCurrentArr(toggle ? watchArr : queueArr);
    
-    fetchFilms(path === "/mylibrary" ? currentArr : value)
+    fetchFilms(path === "/mylibrary" ? currentArr : value, currentPage)
       .then((res) => {
         if (path === "/mylibrary") {
           return dispatch(
@@ -40,7 +41,7 @@ function FilmCardWrap() {
       .catch((er) => {
         console.log(er.message);
       });
-  }, [path, value, queueArr, toggle, watchArr, dispatch, currentArr]);
+  }, [path, value, queueArr, toggle, watchArr, dispatch, currentArr, currentPage]);
 
   
 

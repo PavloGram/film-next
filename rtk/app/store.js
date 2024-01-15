@@ -6,6 +6,7 @@ import watchArr from "../reducers/watchArr";
 import queueArr from "../reducers/queueArr";
 import activeModal from "../reducers/activeModal";
 import currentFilm from "../reducers/currentFilm";
+import currentPage from "../reducers/currentPage";
 
 export const store = configureStore({
     reducer: {
@@ -16,5 +17,6 @@ export const store = configureStore({
      queueArr: queueArr,
      activeModal: activeModal,
      currentFilm: currentFilm,
+     currentPage: currentPage,
     },
   });
